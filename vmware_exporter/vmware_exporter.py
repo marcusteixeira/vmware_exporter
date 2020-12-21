@@ -212,6 +212,20 @@ class VmwareCollector():
                 'VMWare datastore accessible (true / false)',
                 labels=self._labelNames['datastores'])
         }
+        metric_list['vsan_capacity'] = {
+            'vmware_vsan_capacity_disk_read_latency': GaugeMetricFamily(
+                'vmware_vsan_capacity_disk_read_latency',
+                'Disk vSAN layer read latency'
+            ),
+            'vmware_vsan_capacity_disk_write_latency': GaugeMetricFamily(
+                'vmware_vsan_capacity_disk_write_latency',
+                'Disk vSAN layer write latency'
+            ),
+            'vmware_vsan_capacity_disk_read_iops': GaugeMetricFamily(
+                'vmware_vsan_capacity_disk_read_iops',
+                'Disk vSAN layer read IOPS.'
+            ),
+        }
         metric_list['hosts'] = {
             'vmware_host_power_state': GaugeMetricFamily(
                 'vmware_host_power_state',
